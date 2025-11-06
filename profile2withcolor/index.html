@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+      <title>Collin Smith Assignment 6</title>
+
+</head>
+
+
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title>Collin Smith — Report</title>
+      <style>
+        :root{
+          --deep-purple:#220022;
+          --mid-purple:#3b0b3f;
+          --ink:#050005;
+          --accent:#cfa63a;
+          --muted:rgba(255,255,255,0.85);
+          --container:980px;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%;margin:0}
+        body{
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+          color:var(--muted);
+          background: linear-gradient(180deg,var(--deep-purple) 0%, var(--ink) 70%);
+          -webkit-font-smoothing:antialiased;
+          -moz-osx-font-smoothing:grayscale;
+          line-height:1.5;
+        }
+        .wrap{max-width:var(--container);margin:3rem auto;padding:1.25rem}
+        header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
+        .logo{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,var(--mid-purple),var(--deep-purple));border:3px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-family:serif}
+        h1{margin:0;font-size:1.6rem;color:var(--accent);letter-spacing:0.6px}
+        .sub{color:rgba(255,255,255,0.86);margin-top:0.35rem;font-size:0.95rem}
+
+        /* content blocks */
+        .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 6px 20px rgba(0,0,0,0.5)}
+        .spacer{height:1rem}
+
+        /* iframe responsive */
+        .chart-wrap{margin:0.6rem 0}
+        .chart-wrap iframe{width:100%;height:520px;border:0;border-radius:8px}
+
+        /* text */
+        p{color:var(--muted);font-size:1rem}
+
+        /* small profile block */
+        .profile{margin-top:1.25rem;padding:1rem;display:flex;gap:1rem;align-items:flex-start}
+        .avatar{width:86px;height:86px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ab7f2a);display:flex;align-items:center;justify-content:center;color:var(--deep-purple);font-weight:700}
+        .profile p{margin:0}
+
+        /* footer */
+        footer{margin-top:2rem;color:rgba(255,255,255,0.6);font-size:0.9rem;text-align:center}
+
+        @media (max-width:720px){
+          .wrap{margin:1.25rem;padding:0.75rem}
+          .profile{flex-direction:row}
+          .avatar{width:64px;height:64px}
+        }
+      </style>
+    </head>
+    <body>
+      <div class="wrap">
+        <header>
+          <div class="logo">CS</div>
+          <div>
+            <h1>American Troops in Germany 2000–2024</h1>
+            <div class="sub">Interactive chart and short analysis</div>
+          </div>
+        </header>
+
+        <section class="card">
+          <div class="chart-wrap">
+            <!-- original embedded chart retained -->
+            <iframe title="American Troops in Germany 2000-2024" aria-label="Line chart" id="datawrapper-chart-Km31X" src="https://datawrapper.dwcdn.net/Km31X/1/" scrolling="no" frameborder="0" style="min-width:100% !important; border:none;" height="532" data-external="1"></iframe>
+            <script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+          </div>
+
+          <div class="spacer"></div>
+
+          <p>When looking at the data for U.S. Troops stationed in Germany from 2000 to 2024 there was a major spike in 2008. What was going on that made the troops jump to six figure sizes for the first time since 1993? The reason for this spike in the troops in Germany was because the American military bases in Germany are used as a staging ground for US troops before or after being deployed to the middle east. There were major policy changes going on in the middle east in the late 2000s and early 2010s. December 2007 began the withdrawal of troops from Iraq after a massive surge that came in January 2007. A consistent military presence was still in Iraq through 2011. American military movements in 2008 were still a part of Operation Iraqi Freedom/Operation Enduring Freedom FY 08 that saw an increase with over 30 units staged in Germany before being deployed to Iraq or Afghanistan. With both troops being deployed from Germany in 2008 and troops beginning to move out of the middle east in late 2007, there was much traffic going through the American bases in Germany. 2008 was also a busy time for US Troops in Germany as the US closed down a base in Hanau after a 50 year presence. This base closure is in large part responsible for the steep decline in troops in 2009; there was simply less room to have so many personnel. With so much going on in the middle east, the US used its resources in Germany for troop staging — this combined with base closures helps explain the spike in 2008 followed by the fall off in 2009.</p>
+        </section>
+
+        <section class="profile card" aria-label="Profile">
+          <div class="avatar">CS</div>
+          <div>
+            <h2 style="margin:0;color:var(--accent);font-size:1.05rem">Collin Smith — Sophomore Broadcast & Digital Journalism</h2>
+            <p>My name is Collin Smith and I am a sophomore student in broadcast and digital journalism. I am from Bowie, Maryland. I love playing lacrosse and I am the president of the club team at Syracuse. My dream is to one day be a sports broadcaster.</p>
+          </div>
+        </section>
+
+        <footer>
+          &copy; <span id="year">2025</span> Collin Smith — styled in purple & black
+        </footer>
+      </div>
+      <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </body>
+  </html>
+
+
+
+
+
