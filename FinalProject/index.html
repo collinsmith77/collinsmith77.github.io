@@ -1,23 +1,417 @@
-<!DOCTYPE html>
+
 <html>
-        <head>
-            <title>Work</title>
+    <head>
+        <title>A Page</title>
 
-     <link rel="stylesheet" href="../style.css">
-        <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="link rel="preconnect href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap" rel="stylesheet">
 
-<body>
 
-<h1>work </h1>
-<p><a href="http://necfrontrow.com/game/14007" target="_blank">http://necfrontrow.com/game/14007</a>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="../style.css">
+
+
+    </head>
+
+    <body>
+
+<!-- Begin Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-custom">
+<div class="container-fluid">
+<a class="navbar-brand" href="#">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rocket-takeoff-fill" viewBox="0 0 16 16">
+  <path d="M12.17 9.53c2.307-2.592 3.278-4.684 3.641-6.218.21-.887.214-1.58.16-2.065a3.6 3.6 0 0 0-.108-.563 2 2 0 0 0-.078-.23V.453c-.073-.164-.168-.234-.352-.295a2 2 0 0 0-.16-.045 4 4 0 0 0-.57-.093c-.49-.044-1.19-.03-2.08.188-1.536.374-3.618 1.343-6.161 3.604l-2.4.238h-.006a2.55 2.55 0 0 0-1.524.734L.15 7.17a.512.512 0 0 0 .433.868l1.896-.271c.28-.04.592.013.955.132.232.076.437.16.655.248l.203.083c.196.816.66 1.58 1.275 2.195.613.614 1.376 1.08 2.191 1.277l.082.202c.089.218.173.424.249.657.118.363.172.676.132.956l-.271 1.9a.512.512 0 0 0 .867.433l2.382-2.386c.41-.41.668-.949.732-1.526zm.11-3.699c-.797.8-1.93.961-2.528.362-.598-.6-.436-1.733.361-2.532.798-.799 1.93-.96 2.528-.361s.437 1.732-.36 2.531Z"/>
+  <path d="M5.205 10.787a7.6 7.6 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-.126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925"/>
+</svg>
+    Collin Smith
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<li class="nav-item">
+<a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../about/index.html">About</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../resume/index.html">Resume</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../work/index.html">Work</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- End navbar -->
+
+
+
+
+<!-- Begin bootstrap layout -->
+
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col-sm">   
+
+                <h1 class="nabla-smith">Vacant Properties in Syracuse</h1>
+
+                <p>Collin Smith JNL 221 with Prof Pacheco Final Project on Vacant Properties in Syracuse</p>
+
+            </div>
+        </div>
+        
+    
+
+        <div class="row">
+
+            <div class="col-sm col-md-8">
+
+                 
+
+                    <!-- Syracuse Heat Map Section Visulazation -->
+<div id="syracuse-heatmap-container">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <style>
+        #syracuse-heatmap-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #1f2937;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        #syracuse-heatmap-container h2 {
+            text-align: center;
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        #syracuse-map {
+            width: 100%;
+            height: 500px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .heatmap-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .heatmap-info-box {
+            background-color: #374151;
+            padding: 16px;
+            border-radius: 8px;
+            color: white;
+        }
+        .heatmap-info-label {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .heatmap-info-value {
+            font-size: 1.5rem;
+        }
+        .heatmap-legend {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 0.875rem;
+            color: white;
+        }
+        .heatmap-gradient-bar {
+            display: flex;
+            height: 24px;
+            width: 256px;
+        }
+        .heatmap-gradient-bar div {
+            flex: 1;
+        }
+    </style>
+
+    <h2>Syracuse Location Heat Map</h2>
+    
+    <div id="syracuse-map"></div>
+
+    <div class="heatmap-info-grid">
+        <div class="heatmap-info-box">
+            <div class="heatmap-info-label">Total Points</div>
+            <div class="heatmap-info-value">375</div>
+        </div>
+        <div class="heatmap-info-box">
+            <div class="heatmap-info-label">Location</div>
+            <div>Syracuse, NY</div>
+        </div>
+        <div class="heatmap-info-box">
+            <div class="heatmap-info-label">Map Controls</div>
+            <div style="font-size: 0.875rem;">Zoom with scroll or +/- buttons</div>
+        </div>
+    </div>
+
+    <div class="heatmap-legend">
+        <span>Low Density</span>
+        <div class="heatmap-gradient-bar">
+            <div style="background-color: #4c06f1;"></div>
+            <div style="background-color: #22d3ee;"></div>
+            <div style="background-color: #84cc16;"></div>
+            <div style="background-color: #fced17;"></div>
+            <div style="background-color: #d61313;"></div>
+        </div>
+        <span>High Density</span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
+    <script>
+        (function() {
+            const coordinates = [
+                [43.0466, -76.1174], [43.068, -76.1495], [43.0327, -76.1627], [43.0252, -76.1719],
+                [43.0256, -76.1441], [43.0248, -76.142], [43.0238, -76.1454], [43.0164, -76.1436],
+                [43.0232, -76.1477], [43.0141, -76.1484], [43.0209, -76.1471], [43.0112, -76.1491],
+                [43.0235, -76.1428], [43.0181, -76.1463], [43.0223, -76.153], [43.0168, -76.1565],
+                [43.0177, -76.1496], [43.0141, -76.1499], [43.017, -76.15], [43.0145, -76.1492],
+                [43.0186, -76.1416], [43.0159, -76.1436], [43.0223, -76.1413], [43.0176, -76.1549],
+                [43.013, -76.1398], [43.0227, -76.1415], [43.024, -76.1474], [43.0228, -76.1475],
+                [43.0158, -76.1529], [43.0202, -76.1506], [43.014, -76.1408], [43.0757, -76.1455],
+                [43.0764, -76.1346], [43.0811, -76.1537], [43.0733, -76.1388], [43.0659, -76.1013],
+                [43.0605, -76.1047], [43.0625, -76.1217], [43.0718, -76.1118], [43.0656, -76.0946],
+                [43.0721, -76.1069], [43.0549, -76.1209], [43.0252, -76.1609], [43.0167, -76.1646],
+                [43.0196, -76.1621], [43.0229, -76.1576], [43.0254, -76.1594], [43.0185, -76.1572],
+                [43.0229, -76.1574], [43.0203, -76.1587], [43.0168, -76.16], [43.0216, -76.1573],
+                [43.0224, -76.1597], [43.0263, -76.1597], [43.0185, -76.1576], [43.0216, -76.16],
+                [43.0258, -76.1598], [43.0209, -76.1653], [43.0188, -76.1621], [43.0256, -76.1599],
+                [43.0569, -76.1958], [43.0549, -76.1906], [43.0543, -76.1415], [43.0524, -76.1337],
+                [43.052, -76.143], [43.0542, -76.1284], [43.054, -76.1339], [43.0557, -76.1329],
+                [43.0592, -76.1296], [43.0528, -76.1283], [43.0588, -76.1238], [43.042, -76.1127],
+                [43.0446, -76.0922], [43.0368, -76.1697], [43.041, -76.1585], [43.0395, -76.1661],
+                [43.0461, -76.1642], [43.0357, -76.1718], [43.0408, -76.1621], [43.0341, -76.1661],
+                [43.0359, -76.1675], [43.047, -76.1654], [43.0439, -76.1671], [43.0457, -76.1635],
+                [43.0399, -76.1637], [43.0348, -76.1653], [43.0361, -76.1731], [43.035, -76.1678],
+                [43.0332, -76.1736], [43.0344, -76.1651], [43.0119, -76.1569], [43.0077, -76.155],
+                [43.0023, -76.1439], [43.0666, -76.1429], [43.0625, -76.1379], [43.0713, -76.1375],
+                [43.0649, -76.1438], [43.063, -76.1509], [43.0619, -76.1468], [43.0613, -76.1473],
+                [43.0657, -76.1521], [43.0634, -76.1546], [43.0662, -76.1454], [43.0602, -76.1428],
+                [43.0656, -76.1489], [43.0628, -76.1395], [43.0616, -76.1483], [43.0607, -76.152],
+                [43.0711, -76.1427], [43.0611, -76.1524], [43.0594, -76.1425], [43.05, -76.1734],
+                [43.0505, -76.1786], [43.0496, -76.1753], [43.0553, -76.1511], [43.0457, -76.1082],
+                [43.0485, -76.1033], [43.0465, -76.1143], [43.0637, -76.1357], [43.0723, -76.1339],
+                [43.0639, -76.1342], [43.0382, -76.1769], [43.0346, -76.1768], [43.0376, -76.1737],
+                [43.0356, -76.1752], [43.0356, -76.1759], [43.0334, -76.1817], [43.0362, -76.1803],
+                [43.0328, -76.1857], [43.002, -76.1555], [42.9934, -76.1442], [42.9868, -76.1453],
+                [42.9924, -76.137], [42.998, -76.1533], [42.9962, -76.1365], [43.0331, -76.1514],
+                [43.0268, -76.1514], [43.0261, -76.1509], [43.0251, -76.15], [43.0301, -76.1535],
+                [43.03, -76.1526], [43.0299, -76.1498], [43.0289, -76.1511], [43.0335, -76.1645],
+                [43.0375, -76.1532], [43.0308, -76.1552], [43.0384, -76.1598], [43.0297, -76.163],
+                [43.039, -76.1577], [43.034, -76.1644], [43.0362, -76.1605], [43.0312, -76.1608],
+                [43.0336, -76.162], [43.0359, -76.1567], [43.0353, -76.1633], [43.0294, -76.1611],
+                [43.0324, -76.1567], [43.0353, -76.1598], [43.0392, -76.1582], [43.0374, -76.1532],
+                [43.0319, -76.1638], [43.0275, -76.1806], [43.029, -76.1812], [43.0289, -76.1708],
+                [43.0321, -76.181], [43.0504, -76.189], [43.0466, -76.1405], [43.0306, -76.123],
+                [43.0297, -76.1124], [43.0365, -76.1195], [43.0662, -76.1605], [43.0669, -76.1632],
+                [43.0653, -76.159], [43.0754, -76.1568], [43.0654, -76.1591], [43.0667, -76.1557],
+                [43.0717, -76.163], [43.0712, -76.1617], [43.0712, -76.1635], [43.0721, -76.158],
+                [43.0708, -76.1581], [43.0429, -76.1211], [43.0425, -76.1233], [43.0464, -76.128],
+                [43.0167, -76.1445], [43.0144, -76.1501], [43.037, -76.166], [43.0279, -76.1526],
+                [43.032, -76.1182], [43.0634, -76.1519], [43.0738, -76.1618], [43.0233, -76.1624],
+                [43.0638, -76.0993], [43.0576, -76.1978], [43.0709, -76.1398], [43.0473, -76.0989],
+                [43.0221, -76.1464], [43.0182, -76.1536], [43.0236, -76.1408], [43.0159, -76.1529],
+                [43.0231, -76.1509], [43.0121, -76.1443], [43.0156, -76.1529], [43.0136, -76.15],
+                [43.0158, -76.1556], [43.0184, -76.1482], [43.0146, -76.1548], [43.0196, -76.1465],
+                [43.073, -76.1365], [43.0763, -76.1433], [43.0758, -76.1424], [43.075, -76.1349],
+                [43.0808, -76.1533], [43.0629, -76.0931], [43.0701, -76.105], [43.0645, -76.0925],
+                [43.0697, -76.1072], [43.0699, -76.1138], [43.0644, -76.1063], [43.0609, -76.1048],
+                [43.0705, -76.1223], [43.0239, -76.1625], [43.0246, -76.1567], [43.0188, -76.1602],
+                [43.0579, -76.1993], [43.0535, -76.1948], [43.0592, -76.196], [43.0563, -76.1995],
+                [43.0543, -76.1351], [43.0554, -76.1358], [43.0439, -76.1115], [43.0395, -76.1122],
+                [43.0332, -76.1734], [43.0389, -76.1696], [43.0345, -76.1687], [43.0383, -76.1676],
+                [43.0352, -76.1658], [43.0399, -76.1594], [43.0354, -76.1689], [43.0087, -76.1537],
+                [43.01, -76.1583], [43.0069, -76.1396], [43.0052, -76.1421], [43.0113, -76.1558],
+                [43.0018, -76.1445], [43.0012, -76.14], [43.0048, -76.1444], [43.0097, -76.1385],
+                [43.0028, -76.1412], [43.0028, -76.1414], [43.0019, -76.1432], [43.0726, -76.144],
+                [43.0625, -76.1493], [43.0724, -76.1444], [43.0726, -76.1499], [43.0616, -76.1497],
+                [43.0645, -76.1419], [43.058, -76.139], [43.0609, -76.1366], [43.0622, -76.1518],
+                [43.027, -76.1353], [43.0231, -76.1309], [43.0171, -76.1276], [43.0495, -76.1769],
+                [43.0504, -76.1721], [43.0541, -76.174], [43.0507, -76.1679], [43.0524, -76.1681],
+                [43.0507, -76.1674], [43.0576, -76.1434], [43.0588, -76.1488], [43.0461, -76.1143],
+                [43.0492, -76.1109], [43.0504, -76.1114], [43.0507, -76.0949], [43.0472, -76.1118],
+                [43.0514, -76.0948], [43.034, -76.1775], [43.0349, -76.1806], [43.0347, -76.1775],
+                [43.0348, -76.1775], [43.0003, -76.1536], [42.9979, -76.1549], [42.9978, -76.1604],
+                [43.0246, -76.1497], [43.0271, -76.1486], [43.0289, -76.1431], [43.03, -76.1447],
+                [43.0268, -76.1485], [43.0317, -76.1518], [43.0263, -76.1414], [43.0274, -76.1495],
+                [43.0352, -76.1631], [43.0336, -76.1616], [43.0227, -76.1765], [43.0326, -76.1737],
+                [43.02, -76.1729], [43.0239, -76.1744], [43.0287, -76.1833], [43.046, -76.1766],
+                [43.0442, -76.1888], [43.0516, -76.1851], [43.0316, -76.121], [43.023, -76.1135],
+                [43.065, -76.1581], [43.0728, -76.1523], [43.0722, -76.1625], [43.0441, -76.1177],
+                [43.0401, -76.1174], [43.0234, -76.1419], [43.0185, -76.1473], [43.013, -76.1441],
+                [43.0137, -76.1401], [43.014, -76.1411], [43.0785, -76.151], [43.0723, -76.1127],
+                [43.0555, -76.1187], [43.0711, -76.1126], [43.0212, -76.1619], [43.0264, -76.163],
+                [43.0254, -76.1637], [43.0552, -76.1928], [43.0565, -76.1921], [43.0455, -76.1066],
+                [43.038, -76.1721], [43.0673, -76.15], [43.0658, -76.1456], [43.0508, -76.1696],
+                [43.0547, -76.1452], [43.0581, -76.1465], [43.0582, -76.1464], [43.0475, -76.1118],
+                [42.997, -76.1524], [42.9937, -76.1425], [42.988, -76.1437], [43.0325, -76.1616],
+                [43.0318, -76.181], [43.0294, -76.1727], [43.0291, -76.1812], [43.0324, -76.1697],
+                [43.0489, -76.1808], [43.0717, -76.1581], [43.0125, -76.1464], [43.0621, -76.1464],
+                [43.0676, -76.1477], [43.0713, -76.1433], [43.02, -76.1322], [43.0465, -76.1057],
+                [43.0464, -76.1062], [43.0319, -76.1667], [43.0715, -76.1603], [43.0145, -76.1432],
+                [43.0116, -76.141], [43.0561, -76.1214], [43.0658, -76.1052], [43.0743, -76.1081],
+                [43.015, -76.1657], [43.0555, -76.134], [43.0528, -76.1319], [43.0461, -76.11],
+                [43.0726, -76.1269], [43.0309, -76.1531], [43.0321, -76.1873], [43.0362, -76.1707],
+                [43.0128, -76.16], [43.0641, -76.1481], [43.0609, -76.1436], [43.0321, -76.156]
+            ];
+
+            // Wait for Leaflet to load
+            function initMap() {
+                if (typeof L === 'undefined') {
+                    setTimeout(initMap, 100);
+                    return;
+                }
+
+                // Initialize map
+                const map = L.map('syracuse-map').setView([43.048, -76.147], 12);
+
+                // Add OpenStreetMap tiles
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors',
+                    maxZoom: 18
+                }).addTo(map);
+
+                // Prepare heat map data
+                const heatData = coordinates.map(coord => [coord[0], coord[1], 0.8]);
+
+                // Add heat layer
+                L.heatLayer(heatData, {
+                    radius: 25,
+                    blur: 15,
+                    maxZoom: 17,
+                    max: 1.0,
+                    gradient: {
+                        0.0: 'blue',
+                        0.3: 'cyan',
+                        0.5: 'lime',
+                        0.7: 'yellow',
+                        1.0: 'red'
+                    }
+                }).addTo(map);
+            }
+
+            initMap();
+        })();
+    </script>
+</div>
+<!-- End of Syracuse Heat Map Section Visulazation -->
+        
+            </div>
+
+            <div class="col-sm col-md-4">
+            
+                <p>Syracuse, New York has over 146,000 residents within its borders, making it the 5th largest city in the state. While still being one of the largest cities in the state, Syracuse once hosted a population of over 220,000 in the 1950s. Most recently, the Salt City’s population has decreased by over 2,000 people from the 2020 to the 2024 census. On top of Syracuse’s declining population, the city is amongst the worst in the nation with a 45.6% child poverty rate. Within Syracuse, the Department of Assessments estimates there are over 41,000 residential, business, and city-owned properties. With a declining population and a struggle with poverty, vacant properties loom as a threat to the city. <p>
+
+                
+
+                <p>The Syracuse Vacant Properties Registry (VPR) keeps track of properties reported as vacant. The most recent data from the VPR had 1,652 reported vacant properties across 29 neighborhoods in Syracuse. Of the 1,651 only 375 were certified by the VPR with assigned plans of action for the properties. Those 375 properties are marked on the map. The neighborhood with the most vacant properties is Brighton, located on the southside, with 50 properties. Disparity on the southside of Syracuse dates back to racial redlining that occurred with the construction of Interstate 81, separating Brighton from areas like Syracuse University and Downtown.  
 </p>
 
-        <head>
-            <title>A Page</title>
+            </div>
 
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm">
+                <p>According to the VPR website, “If you own a vacant property with exterior code violations in the city of Syracuse, you must register your property. The goal of the Vacant Property Registry (VPR) is to reduce blight in neighborhoods by motivating owners of dilapidated properties to bring their property back to productive use.” Properties not registered by the owner can be reported to the city by other members of the neighborhood. </p>
+
+                <p> In order to help deal with the vacant property problem in Syracuse and help the city thrive, the VPR has plans for their certified properties and guidelines for their owners to follow. There are 3 different plans that these vacant properties can be permitted for and the VPR tracks how long they have been in the system. According to the most recent data, permitted vacant properties are dealt with in their first couple years of being acknowledged by the VPR. Of the 375 vacancies, 305 are in their first year in the system with a major decrease to 38 by year 2. The number of properties in year 3 in the system drops down to 10, while there are 12 vaccines registered for 4+ years. While 8 were terminated and 2 had their permits ruled invalid.  </p>
+
+
+   <!-- Data visualization code goes here. -->
+
+                    <iframe title="[ Insert title here ]" aria-label="Column Chart" id="datawrapper-chart-2Eiz0" src="https://datawrapper.dwcdn.net/2Eiz0/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="714" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
            
-        <head>
+                <!-- End dataviz section -->
 
-</body>
 
+
+
+                <p>The three plans according to the Vacant Property Registry and Syr.gov website are </p>
+
+<p> Plan A: Rehabilitate and reoccupy - must submit a rehabilitation plan that will include a timeframe of completion no longer than 365 days after successfully registering their property</p>
+
+<p> Plan B: Stabilize and maintain - must submit a plan for securing the building that meets the City’s maintenance standards along with a reason why they wish to keep the building vacant </p>
+
+<p>Plan C: Demolish with private funds - allows owner to start the demolition process to completely remove the structure(s) using their own funds  </p>
+
+                <p>Plan A creates the best path forward for building back neighborhoods. It allows for livable properties in neighborhoods and requires changes be made in under a year. This plan allows for the quickest turn around for communities to get back to their full potential with full houses in prime condition. Plan B gives owners an opportunity for their property to remain vacant, the owner must be responsible for the condition of the house and make sure that it meets community standards. This ensures vacant properties do not begin falling apart, rotting, or become overtaken by nature. Plan C guarantees no property is left to fall apart and become an eye-sore for the community. If owners do nothing to fix their property the city forces them to tear it down, at their own expense. These three plans give owners the options to deal with vacant properties that become eye sores to communities. In order to avoid dilapidated and dangerous buildings from remaining in neighborhoods, the VPR lays out guidelines to deal with them in the quickest and most effective manner. 
+</p>
+            </div>
+
+            
+        </div>
+
+        <div class="row">  
+              <div class="col-sm col-md-4"></div>
+            
+            <!-- Plan Breakdown -->
+
+            <iframe title="Plan Status Breakdown" aria-label="Table" id="datawrapper-chart-PHcT4" src="https://datawrapper.dwcdn.net/PHcT4/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="279" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+
+            <div class="col-sm col-md-8">
+
+                <div class="col-LG col-md-4"></div>
+
+                <p>Dealing with vacant properties is important for cities like Syracuse, to ensure community safety. For home owners like Zach Trainer, vaccines near his neighborhood are a health and safety concern, “Vacant properties create a risk for misuse and criminal activity as well as dangerous code violations for everyone in the community, especially for families with young children.”  </p>
+
+            </div>
+
+            <div class="col-sm col-md-4">
+
+                <!-- Plan Type Viz -->
+
+                    <<iframe title="Vacant Property Registry Plan Type Chosen" aria-label="Pie Chart" id="datawrapper-chart-DnAj3" src="https://datawrapper.dwcdn.net/DnAj3/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="557" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+           
+                <!-- End dataviz section -->
+
+                
+            </div>  
+        </div>
+            <div class="col-LG col-md-4">
+
+              
+
+        
+            <div class="row">
+                <div class="col-sm">
+                    <p>  The work of the VPR is to ensure the city of Syracuse deals with its ongoing vacancy issue. Without addressing such issues, residents will continue to feel unsafe and Syracuse could only face a growing decrease in population. The work of the VPR may seem minimal, but is key in holding Syracuse to a higher standard as one of the great in New York State. 
+</p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+<!-- End bootstrap layout -->
+
+        
+
+        
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>    
+
+    </body>
 </html>
