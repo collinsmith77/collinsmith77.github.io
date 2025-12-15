@@ -1,0 +1,79 @@
+:root {
+    --bg: #efe8ff; /* very light purple */
+    --accent: #d4af37; /* gold */
+    --accent-strong: #b8860b;
+    --text: #222;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: var(--accent);
+    margin-top: 0;
+    font-family: "Lucida Grande", "Lucida Sans", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(212,175,55,0.12);
+    padding-bottom: 8px;
+}
+
+/* Paragraphs */
+p {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: var(--text);
+    line-height: 1.6;
+    margin: 0 0 1em 0;
+}
+
+/* Links and small gold accents */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(212,175,55,0.6);
+}
+
+a:hover, a:focus {
+    color: var(--accent-strong);
+    border-bottom-color: rgba(184,134,11,0.9);
+}
+
+/* Small accent buttons */
+.button, button, input[type="button"], input[type="submit"] {
+    background: transparent;
+    color: var(--accent-strong);
+    border: 1px solid rgba(212,175,55,0.9);
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.button:hover, button:hover {
+    background: rgba(212,175,55,0.08);
+}
+
+/* Utility: subtle card */
+.card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
